@@ -3,3 +3,8 @@
 const burger = document.querySelector(".burger");
 // 2. Je recupere la fenetre modal
 const modal = document.querySelector(".modal");
+// // Suite
+burger.addEventListener("click", () => {
+  burger.classList.toggle("fa-x");
+  modal.classList.toggle("show-modal");
+});
