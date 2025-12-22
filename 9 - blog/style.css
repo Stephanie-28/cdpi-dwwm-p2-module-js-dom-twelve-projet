@@ -23,6 +23,7 @@ body{
 .banniere-titre h1{
     font-size: 3rem;
     margin: 1rem 0;
+    color:white;
 }
 .posts{
     width: 80%;

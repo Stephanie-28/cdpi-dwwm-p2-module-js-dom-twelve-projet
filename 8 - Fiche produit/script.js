@@ -6,17 +6,27 @@
  * operateur ternaire
  */
 
-// 1. Je recupere toutes les petites vignettes
+// 1. Recuperer toutes les vignettes
 const vignettes = document.querySelectorAll(".small");
-// 2. Je recupere la grande photo
+// 2. Recuperer la grande image
 const fullImg = document.getElementById("full");
-
-// 3. Je recupere le bouton AJOUTER
+// 3. Recuperer le bouton ajouter
 const btnAdd = document.querySelector(".btn-add");
-
-// 4. Je recupere la balise vide de message d'ajout du panier
+// 4. Message panier
 const panierMsg = document.querySelector(".panier-msg");
-// 5. Je crée une variable qui contient le nombre de produits ajoutées ua panier
+// 5. Compteur panier
 let panier = 0;
-
-// ...
+// 6. Click sur une vignette
+vignettes.forEach(vignette => {
+    vignette.addEventListener("click", () => {
+        // changer l image principale
+        fullImg.src = vignette.src;
+        // inverser l image
+        fullImg.classList.toggle("inverted");
+    });
+});
+// 7. Click sur ajouter au panier
+btnAdd.addEventListener("click", () => {
+    panier++;
+    panierMsg.textContent = "Produit ajoute : " + panier;
+});
